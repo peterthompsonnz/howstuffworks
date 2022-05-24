@@ -1,0 +1,103 @@
+:root {
+  font-family: helvetica, arial, sans-serif; 
+  font-size: 100%;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%; 
+  margin: 0
+}
+
+body { padding: 0;}
+
+main {
+  max-width: 70ch;
+  margin: 0 auto;
+  padding: 1rem 1rem 4rem;
+  min-height: 100vh; 
+  font-size: 1.3rem;
+  line-height: 1.6;
+}
+
+nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #222;
+}
+
+nav h1 {
+  color: #fefefe;
+  font-size: 2.25rem;
+  padding: 1.6rem 0;
+  margin: 0;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+nav ul li {
+  margin-right: 1.2rem;
+  font-size: 1.3rem
+}
+
+nav ul li a {
+  color: #fefefe;
+}
+
+nav h1 a {
+  text-decoration: none;
+  color: #fefefe;
+}
+
+nav h1 a:hover {
+  text-decoration: none;
+/*   color: #fefefe; */
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+nav ul li a:hover {
+  color: #fefefe;  
+}
+
+h1, h2 {
+  margin-bottom: 1rem;
+}
+
+figure {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  margin: 1rem 0 2rem 0; 
+  padding: 6px;
+  background-color: #deddda;
+  border-radius: 6px;
+}
+
+figcaption {
+  text-align: center;
+  padding: 5px 0;
+  font-size: 1rem;
+  font-style: italic;
+}
+
+img {
+  display: block;  
+  max-width: 100%;
+  height: auto;
+}
+
