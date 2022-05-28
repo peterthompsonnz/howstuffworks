@@ -1,6 +1,14 @@
 :root {
-  font-family: helvetica, arial, sans-serif;
-  font-size: 100%;
+  --font-family: helvetica, arial, sans-serif;
+  --font-size: 100%;
+  --light-theme-main-text-color: #222222;
+  --light-theme-main-background-color: #fefefe;
+  --light-theme-nav-text-color: #fefefe;
+  --light-theme-nav-background-color: #222222;
+
+  --light-gray-color: #dedede;
+  
+  --light-gray-color: #8b8b8b;
 }
 
 *,
@@ -24,7 +32,7 @@ main {
   max-width: 70ch;
   margin: 0 auto;
   padding: 1rem 1rem 4rem;
-  min-height: 100vh;
+  /* min-height: 100vh; */
   line-height: 1.6;
 }
 
@@ -33,12 +41,12 @@ nav {
   justify-content: space-around;
   align-items: center;
   flex-wrap: wrap;
-  background-color: #222;
+  background-color: var(--light-theme-nav-background-color, #222);
   padding: 1rem 0;
 }
 
 nav h1 {
-  color: #fefefe;
+  color: var(--light-theme-nav-text-color, #fefefe);
   font-size: 2.25rem;
   padding: 0.25rem 0;
   margin: 0 2rem 0 1rem;
@@ -58,26 +66,25 @@ nav ul li {
 
 nav ul li::after {
   content: " :: ";
-  color: #fefefe;
+  color: var(--light-theme-nav-text-color, #fefefe);
 }
 
 nav ul li:last-of-type::after {
   content: "";
-  color: #fefefe;
+  color: var(--light-theme-nav-text-color, #fefefe);
 }
 
 nav ul li a {
-  color: #fefefe;
+  color: var(--light-theme-nav-text-color, #fefefe);
 }
 
 nav h1 a {
   text-decoration: none;
-  color: #fefefe;
+  color: var(--light-theme-nav-text-color, #fefefe);
 }
 
 nav h1 a:hover {
-  text-decoration: none;
-  /*   color: #fefefe; */
+  text-decoration: none;  
 }
 
 a {
@@ -89,7 +96,7 @@ a:hover {
 }
 
 nav ul li a:hover {
-  color: #fefefe;
+  color: var(--light-theme-nav-text-color, #fefefe);
 }
 
 h1,
@@ -103,7 +110,7 @@ figure {
   justify-content: flex-start;
   margin: 1rem 0 2rem 0;
   padding: 6px;
-  background-color: #deddda;
+  background-color: var(--light-gray-color, #deddda);
   border-radius: 6px;
 }
 
@@ -118,6 +125,17 @@ img {
   display: block;
   max-width: 100%;
   height: auto;
+}
+
+footer {
+  display:flex;
+  justify-content:center; 
+}
+
+footer div {
+  font-size: 0.95rem;
+  padding: 1rem;
+  border-top: 1px solid var(--mid-gray-color, #8b8b8b);
 }
 
 @media screen and (max-width: 600px) {
