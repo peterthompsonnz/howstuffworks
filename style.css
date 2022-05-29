@@ -138,6 +138,14 @@ footer div {
   border-top: 1px solid var(--mid-gray-color, #8b8b8b);
 }
 
+hr {
+  display: block;
+  margin: 2rem 0;
+  border: none;
+  height: 0;
+  border-top: 1px solid var(--light-gray-color, #dedede);
+}
+
 @media screen and (max-width: 600px) {
   body {
     font-size: 1rem;

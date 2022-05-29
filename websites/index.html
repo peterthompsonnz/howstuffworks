@@ -21,21 +21,31 @@
   </nav>
   <main>
     <h1>What is a Website</h1>
-    <h2>Overview</h2>
-    <p>We will learn about websites and web technologies by examing various websites. The main one can be found at this web address: <a href="https://simplesite.joebloggsnz.repl.co/">simplesite</a>. Note that the web server that serves the site is not always running. An always up mirror site can be found at: <a href="https://asimplesite.netlify.app/">simplesite mirror</a>.</p>
+    <h2>Introduction</h2>
+    <p>We will learn about websites and web technologies by examing various websites. The main one can be found at this
+      web address: <a href="https://simplesite.joebloggsnz.repl.co/">simplesite</a>. Note that the web server that
+      serves the site is not always running. An always up mirror site can be found at: <a
+        href="https://asimplesite.netlify.app/">simplesite mirror</a>.</p>
     <hr>
-    <h2>A simple explaination</h2>
+    <h2>Website structure</h2>
     <p>If you search for how a website works using a search term like, 'how does a website work', you will get plenty
-      of results. Some will be more useful than others depending on how 'technical' they are. However, following is a simple
+      of results. Some will be more useful than others depending on how 'technical' they are. However, following is a
+      simple
       explaination.</p>
     <p>A website can be thought of as a collection of files housed in a folder on a web server. A web server is
       basically
-      a specialised computer that runs web server software. The computer is purposely accessible on the Internet - so, by default the
-      files that make up the website are as well. The location of the website folder (known as the website root) is associated
-      with a Unique Resource Location or <a href="https://developer.mozilla.org/en-US/docs/Web/API/URL">URL</a> for short. No two websites can have the same root URL. The files in the website
+      a specialised computer that runs web server software. The computer is purposely accessible on the Internet - so,
+      by default the
+      files that make up the website are as well. The location of the website folder (known as the website root) is
+      associated
+      with a Unique Resource Location or <a href="https://developer.mozilla.org/en-US/docs/Web/API/URL">URL</a> for
+      short. No two websites can have the same root URL. The files in the website
       are arranged in folders just like files are on a typical home computer. For example, images are often stored in a
-      folder called <b>images</b>. The files in the site have their own urls, the first part of which is the site root url, then the path to the file is added to the end of this. For example, if the site's url is <b>mycoolsite.co.nz</b> and there is an <b>images</b> folder that contains an image called <b>coolcat.jpg</b>, then the url of that image is <b>mycoolsite.co.nz/images/coolcat.jpg</b></p>
-      <p>The files are typically of the following types:</p>
+      folder called <b>images</b>. The files in the site have their own urls, the first part of which is the site root
+      url, then the path to the file is added to the end of this. For example, if the site's url is
+      <b>mycoolsite.co.nz</b> and there is an <b>images</b> folder that contains an image called <b>coolcat.jpg</b>,
+      then the url of that image is <b>mycoolsite.co.nz/images/coolcat.jpg</b></p>
+    <p>The files are typically of the following types:</p>
     <ul>
       <li>HTML (Hypertext Markup Language): These files have a html file extension and contain html syntax tags along
         with readable text. Click on this link to learn more: <a
@@ -47,29 +57,49 @@
         developed and are becoming more popular e.g. webp, and avif. Click on this link to learn more: <a
           href="https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Images_in_HTML">images in
           HTML</a></li>
-      <li>JavaScript: These files have a js file extension, and web browsers have built-in a JavaScript interpreters. They
+      <li>JavaScript: These files have a js file extension, and web browsers have built-in a JavaScript interpreters.
+        They
         turn the text-like code into machine code that allows the web page's content to be dynamically altered. A web
         page or site that uses JavaScript is often refered to as a 'web app'. A good example of a web app is Gmail. If
         you view the source of a Gmail page you will see a lot of script tags and these indicate the usage of
         JavaScript. Click on this link to learn more: <a
           href="https://developer.mozilla.org/en-US/docs/Web/javascript">about JavaScript</a></li>
     </ul>
-    <h2>Resource links</h2>
-    <ul>
-      <li>A good starting off point if you are interested in building websites: <a
-          href="https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web">Getting Started with the
-          Web</a></li>
-      <li>The example website that we will study: <a href="https://simplesite.joebloggsnz.repl.co/index.html">A simple
-          website</a>. This site was built using the replit IDE (indegrated development environment). This environment
-        is actually a good example of a web app. The image below shows a screenshot of it. The screen is split into
-        three areas: the file system, the editor (showing the html of the home or index page at present), and a webview
-        of the webpage when it is 'run' or served up.</li>
-    </ul>
-
+    <p>A good starting point if you are interested in building websites is this page: <a
+        href="https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web">Getting Started with the
+        Web</a>
+    </p>
+    <hr>
+    <h2>Replit IDE</h2>
+    <p>
+      Below is a screenshot of the example website that we will study: <a href="https://simplesite.joebloggsnz.repl.co/index.html">A simple
+        website</a>. This site was built using the replit IDE (indegrated development environment). This environment
+      is actually a good example of a web app. The screen is split into
+      three areas: the file system, the editor (showing the html of the home or index page at present), and a webview
+      of the webpage when it is 'run' or served up.
+    </p>
     <figure>
       <img src="/websites/assets/images/replit-screenshot.jpg"
         alt="A screenshot of the example website opened in the replit IDE" loading="lazy">
       <figcaption>A screenshot of the example website opened in the replit IDE</figcaption>
+    </figure>
+    <hr>
+    <h2>Network requests</h2>
+    <p>
+      When a url is entered (typed or copy and pasted) into a browser's address bar and the Enter key is pressed the browser sends a GET request to the web server that hosts the file (typically a web page). The file is read and any addional resources e.g. images, css and javascript files, are then requested. In the graphic below the web browser's developer tools are open and the network tab is shown. It can be seen that five HTTP (Hypertext Transfer Protocol) GET requests have been made and four of them are successful (status of 200). The one that is not successful has a return code of 404. This request is asking for the page's non existent favicon, hence the failure. Note that the second request is not to a replit web server, instead it is to one at <b>images.panoramix.nl</b>. This is because the image of Trafalgar street is housed on this server. (It is probably an image server rather than a web server). In this way a web page can be made up of elements from different sources.
+    </p>
+    <p>
+      To learn more about HTTP visit this page: <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Overview">About HTTP</a>.
+    </p>
+    <p>
+      The index or home page of the site is highlighted in blue, and on the right more information about the GET request for the page can be seen. For example, the fact that 1.76KB (kilobytes) has been transferred. This is the size of the home page file that has been sent from the web server to the web browser. Clicking on the response tab will actually show a snapshot of the page. Once all the elements of the page (e.g. html, images, css styles, javascript) have been downloaded the browser can create and display the page. In fact this is not quite true because, in the persuit of efficiency and speed, the page will start displaying when the html has fully downloaded. You probably have had an experience where images have loaded after the web page text has been displayed. Sometimes this causes an annoying layout shift.
+    </p>
+    <figure>
+      <img src="/websites/assets/images/network-requests.jpg"
+        alt="A screenshot of the network requests made when the main page of the simple website is loaded"
+        loading="lazy">
+      <figcaption>A screenshot of the network requests made when the main page of the simple website is loaded
+      </figcaption>
     </figure>
 
 
