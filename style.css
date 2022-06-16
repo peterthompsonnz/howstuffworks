@@ -7,7 +7,7 @@
   --light-theme-nav-background-color: #222222;
 
   --light-gray-color: #dedede;
-  
+
   --mid-gray-color: #8b8b8b;
 }
 
@@ -32,7 +32,7 @@ body {
 main {
   max-width: 960px;
   margin: 0 auto;
-  padding: 1rem 1rem 4rem;  
+  padding: 1rem 1rem 4rem;
   line-height: 1.6;
 }
 
@@ -74,6 +74,20 @@ nav ul li:last-of-type::after {
   color: var(--light-theme-nav-text-color, #fefefe);
 }
 
+a:not(nav a) {
+  text-decoration: none; 
+  color: #2076cc;  
+}
+
+nav a {
+  text-decoration: none;
+ 
+}
+
+a:hover {
+  text-decoration: underline;  
+}
+
 nav ul li a {
   color: var(--light-theme-nav-text-color, #fefefe);
 }
@@ -84,15 +98,7 @@ nav h1 a {
 }
 
 nav h1 a:hover {
-  text-decoration: none;  
-}
-
-a {
   text-decoration: none;
-}
-
-a:hover {
-  text-decoration: underline;
 }
 
 nav ul li a:hover {
@@ -107,7 +113,6 @@ h2 {
 figure {
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
   margin: 1rem 0 2rem 0;
   padding: 6px;
   background-color: var(--light-gray-color, #deddda);
@@ -127,9 +132,10 @@ img {
   height: auto;
 }
 
+
 footer {
-  display:flex;
-  justify-content:center; 
+  display: flex;
+  justify-content: center;
 }
 
 footer div {
