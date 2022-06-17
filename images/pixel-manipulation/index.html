@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Image work</title>
+    <style>
+        canvas {
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
+
+<body>
+    <div style="display: none;">
+        <img src="./images/moon-train.jpg">
+    </div>
+
+    <canvas></canvas>
+    <script>
+        const RED = 0;
+        const GREEN = 1;
+        const BLUE = 2;
+        const ALPHA = 3;
+
+        const canvas = document.querySelector('canvas');
+        const cw = canvas.width = 600;
+        const ch = canvas.height = 337 * 4 + 80;
+        const ctx = canvas.getContext('2d');
+
+        const image = document.querySelector('img');
+        const train = new Image();
+        train.src = image.src;
+
+        function getImageData() {
+            return new Promise(function (resolve, reject) {
+                train.onload = function () {
+                    ctx.drawImage(image, 0, 0, image.width, image.height);
+                    const imageData = ctx.getImageData(0, 0, image.width, image.height);
+                    resolve(imageData);
+                };
+                train.onerror = function () {
+                    reject("Error loading image");
+                };
+            });
+        }
+
+        getImageData()            
+            .then(function (imageData) {
+                removeColour(RED, imageData);
+                ctx.putImageData(imageData, 0, image.height + 20);
+                removeColour(GREEN, imageData);
+                ctx.putImageData(imageData, 0, (image.height + 20) * 2);
+                invertColours(imageData);
+                ctx.putImageData(imageData, 0, (image.height + 20) * 3);
+            })
+            .catch(function (err) {
+                console.log(err);
+            });
+
+        function removeColour(colour, imageData) {
+            let dataArray = imageData.data;
+            for (let i = 0; i < dataArray.length; i += 4) {
+                dataArray[i + colour] = 0;
+            }
+        }
+
+        function invertColours(imageData) {
+            let dataArray = imageData.data;
+            for (let i = 0; i < dataArray.length; i += 4) {
+                dataArray[i] = 255 - dataArray[i];
+                dataArray[i + 1] = 255 - dataArray[i + 1];
+                dataArray[i + 2] = 255 - dataArray[i + 2];
+            }
+        }
+    </script>
+
+</body>
+
+</html>

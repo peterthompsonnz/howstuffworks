@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Images: How Stuff Works</title>
+    <meta name="description" content="This page contains information on the pros and cons of different image formats" />
+    <link rel="canonical" href="https://howstuffworks.netlify.app/" />
+    <link href="../style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+    <nav>
+        <h1><a href="/">How Stuff Works</a></h1>
+        <ul>
+            <li><a href="../">Home</a></li>
+            <li><a href="../the-internet/">The Internet</a></li>
+            <li><a href="../websites">Websites</a></li>
+            <li><a href="#">Images</a></li>
+        </ul>
+    </nav>
+    <main>
+        <main>
+            <h1>About Images</h1>
+            <h2>Introduction</h2>
+            <p>When an image is displayed on a screen it is represented by a rectangular block of small squares called
+                "pixels".
+                This is also referred to as a "Bitmap". The word pixel is a contraction of the two words "Picture
+                element". The
+                pixels are arranged in a grid containing rows and columns. Each pixel is coloured (though some can be
+                transparent
+                - more on this later) and this colour is made up of a mix of red, green and blue. This is known as the
+                RGB colour
+                system, and it is the one that monitors and screens use. Each of these component colours can have a
+                strength
+                that is represented by a number between 0 and 255. A value of 0 means there is no amount of colour; a
+                value of
+                255 means the colour is at full strength. Therefore the number of different colour shades is red
+                strengths x
+                green strengths x blue stregths or 255 x 255 x 255 => 16,581,375. Pixels are quite small and usually can
+                not
+                be seen unless the image they are a part of is magnified or zoomed. Below is an original image of a
+                train and
+                the area around the light that has been zoomed. The pixels can be clearly seen around the edge of the
+                light.</p>
+            <figure>
+                <img src="assets/moon-train.jpg" alt="TGV train with moon in the sky">
+                <figcaption>(600x337) image at normal zoom</figcaption>
+            </figure>
+            <figure>
+                <img src="assets/pixelated-moon-train-light.png" alt="Pixelated TGV train light">
+                <figcaption>Part of image zoomed
+                    <br>showing pixels
+                </figcaption>
+            </figure>
+
+            <p>
+                It can also be seen that the curved line at the edge of the light is actually made up of 3 or 4 lines of
+                pixels, each of
+                a different colour. This effect is called anti-aliasing and is used to cope with the fact that it is
+                hard to
+                represent curved lines with groups of square blocks. Taken together the effect is to blend the colour
+                transition.
+            </p>
+
+            <h2>Resolution or screen definition</h2>
+            <p>
+                Every image has a resolution. This is the width and height of the image in pixels. For example the first
+                train image has
+                a width of 600 pixels and a height of 337 pixels. The actual size that the image takes up on a device's
+                screen
+                is governed by its resolution. This is the number of pixels per inch that the screen displays. A typical
+                computer desktop monitor has a resolution of 72 pixels per inch (in both the horizontal and vertical
+                directions).
+                Inches are typically used rather than centimetres or millimetres for historical reasons to do with
+                printing.
+                This means that the 600 by 337 image will take up a space of 600/72 by 337/72 or 8.33 by 4.68 inches, or
+                21.16cm
+                by 11.89cm on a typical desktop monitor.
+            </p>
+            <p>
+                In contrast a mobile phone such as the Moto G3 has a much higher resolution. In its case it is 294ppi
+                (pixels per inch).
+                This means that the 600 by 337 image ideally will take up a space of 600/294 by 337/294 or 2.05 by 1.15
+                inches,
+                or 5.21cm by 2.92cm. I write ideally because there are several other factors that determine how big an
+                image
+                will be displayed at, such as what styles the creator of the page has set for image display.
+            </p>
+            <p>
+                The high resolutions of mobile phones result in sharper images due to the smaller pixel size. This makes
+                curved lines more defined and crisper. It also allows for images or text to be zoomed with a smaller
+                loss of clarity than a lower resolution screen would allow for.
+            </p>
+            <h2>Image formats</h2>
+            <p>This section is quite technical, but will be useful when learning about saving images in different image
+                formats when using Photopea. Don't worry if you do not understand it all.</p>
+            <p>As mentioned above, an image displayed on a screen is a rectangular grid of coloured pixels. Each pixel's
+                colour
+                is made up of a combination of various strengths of red, green and blue. This is called the RGB
+                (Red,Green,Blue) colour system and it is "additive" in that the three different colour strengths are
+                added together to get the final colour. It takes 1 byte of computer memory to store each red, green and
+                blue value, so a pixel uses 3 bytes of storage. This means the train image uses 600 x 337 (number of
+                pixels)
+                x 3 bytes of memory. This works out as 606,600 bytes or 606.6kB and is a lot for such a comparatively
+                small image. If images were stored in the device's permanent
+                memory using this system it would quickly use up available memory. This was realised long ago and
+                various methods
+                were used to store image data more efficiently.</p>
+
+            <h3>Compressed, uncompressed, lossey and lossless formats</h3>
+            <p>Image data can be stored using methods that cleverly manipulate the pixel data so less of it needs to be
+                stored.
+                They are said to "compress" the data. This results in a lower file size than that which would occur if
+                the data was
+                not compressed (i.e. uncompressed).</p>
+            <p>The methods that manipulate pixel data often do so by throwing away some of it. Because they do this they
+                are called
+                "lossey". However, some compression methods do not throw away data, and still manage a smaller
+                file size. They are called "lossless". The various image formats use a combination of all of the above
+                methods. An image's type (e.g. photo, icon, animation) determines the best format to use for storage.
+                Following are the common image storage formats
+                and a bit about them. Note: images use a file extension to identify their type. The file name is
+                followed by
+                a dot and a group of 3 or 4 letters e.g. jpg, jpeg, bmp, png, svg</p>
+            <ul>
+                <li>
+                    <strong>Bitmap</strong>: File extension
+                    <em>bmp</em> - uses no compression, 24bits per pixel and is not lossey, however it results in large
+                    file sizes, Microsoft Paint
+                    uses this format by default.
+                </li>
+                <li>
+                    <strong>JPEG</strong> (invented by the Joint Photographers Experts group to store photographs): File
+                    extensions
+                    <em>jpg </em>or
+                    <em>jpeg</em> - uses lossey 24 (RGB) or 32 bit (RGBA system) compression, is the most common format
+                    used for images on the web, used by most phones as it leads to efficient file sizes with little loss
+                    of quality, can handle 16 million
+                    plus different colour shades.
+                </li>
+                <li>
+                    <strong>PNG</strong> (Portable Network Graphics): File extension
+                    <em>png</em> - comes in two flavours, 8 and 24 bits (1 byte and 3 bytes), 8 bit version is lossey as
+                    it can only
+                    store 256 unique colours <strong>unless there are 256 or less unique colours in the image</strong>,
+                    24 bit version is not, as like jpeg it can handle 16+ million colours. However,
+                    using the 24bit version results in large file sizes compared to jpeg, supports transparency
+                    - this means one colour in the image can be set to be transparent or see-through.
+                </li>
+                <li>
+                    <strong>GIF</strong>: File extension
+                    <em>gif</em>- similar to PNG 8 bit version, can support simple animation, but not as efficient as
+                    PNG, proprietary
+                    format (copyright owned).
+                </li>
+            </ul>
+            <h2>Examples of the different formats</h2>
+            <p>Note that the three images of the sun going down appear to be the same quality, however note the
+                different file sizes. It is obvious that the jpeg is the most efficient in terms of file size for this
+                type of image i.e. one that has many colour shades.</p>
+            <figure>
+                <img src="assets/new-zealand.bmp" alt="Country scene">
+                <figcaption>BMP, 660kB, lossless, uncompressed</figcaption>
+            </figure>
+            <figure>
+                <img src="assets/new-zealand.png" alt="Country scene">
+                <figcaption>PNG, 403kB, 24bit, compressed, lossless</figcaption>
+            </figure>
+            <figure>
+                <img src="assets/new-zealand.jpg" alt="Country scene">
+                <figcaption>
+                    <strong>JPEG, 53kB</strong>, 24bit, compressed, lossey
+                </figcaption>
+            </figure>
+            <figure>
+                <img src="assets/raccoon.png" alt="Cartoon raccoon">
+                <figcaption>PNG, 6.8kB compressed, lossless, transparent background
+                    <br>(note grey colour showing through)
+                </figcaption>
+            </figure>
+            <figure>
+                <img src="assets/raccoon.gif" alt="Cartoon raccoon">
+                <figcaption>GIF, 6.9kB, compressed, lossless, transparent background
+                    <br>(note grey colour showing through)
+                </figcaption>
+            </figure>
+            <figure>
+                <img src="assets/Seven_segment_display-animated.gif" alt="Dgital clock">
+                <figcaption>Animated GIF, 10.8kB, compressed, lossless</figcaption>
+            </figure>
+
+            <h3>Pixel Manipulation</h3>
+            <p>Link: <a href="pixel-manipulation/">Open page...</a></p>
+
+        </main>
+
+</body>
+
+</html>
