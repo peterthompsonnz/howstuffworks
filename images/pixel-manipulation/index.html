@@ -8,74 +8,59 @@
     <title>Image work</title>
     <style>
         canvas {
-            border: 1px solid #ccc;
+            display: block;
+            margin: 1rem auto;            
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin: 0 auto;
+            max-width: 750px;
+        }
+
+        figure {
+            margin: 1.5em 0;
+        }
+
+        figcaption {
+            text-align: center;
+            margin: 0.5em 0;
+            font-style: italic;
+        }
+
+        h1 {
+            margin: 1em 0;
+        }
+
+        label {
+            display: block;
+            margin: 1em 0
         }
     </style>
 </head>
 
 <body>
-    <div style="display: none;">
-        <img src="./images/moon-train.jpg">
-    </div>
+    <h1>Manipulating an Image</h1>
+    <label for="operation">Choose an operation to perform on the image:</label>
+    <select id="operation" name="operation">
+        <option value="" selected>--Please choose an option--</option>
+        <option value="RR">Remove Red</option>
+        <option value="RG">Remove Green</option>
+        <option value="RB">Remove Blue</option>
+        <option value="INVERT">Invert colours</option>
+        <option value="GRAYSCALE">Grayscale colours</option>
+    </select>
+    <br>
+    <figure style="display:none">
+        <img id="trainImage" src="./images/moon-train.jpg">
+        <figcaption>Original image</figcaption>
+    </figure>
 
     <canvas></canvas>
-    <script>
-        const RED = 0;
-        const GREEN = 1;
-        const BLUE = 2;
-        const ALPHA = 3;
-
-        const canvas = document.querySelector('canvas');
-        const cw = canvas.width = 600;
-        const ch = canvas.height = 337 * 4 + 80;
-        const ctx = canvas.getContext('2d');
-
-        const image = document.querySelector('img');
-        const train = new Image();
-        train.src = image.src;
-
-        function getImageData() {
-            return new Promise(function (resolve, reject) {
-                train.onload = function () {
-                    ctx.drawImage(image, 0, 0, image.width, image.height);
-                    const imageData = ctx.getImageData(0, 0, image.width, image.height);
-                    resolve(imageData);
-                };
-                train.onerror = function () {
-                    reject("Error loading image");
-                };
-            });
-        }
-
-        getImageData()            
-            .then(function (imageData) {
-                removeColour(RED, imageData);
-                ctx.putImageData(imageData, 0, image.height + 20);
-                removeColour(GREEN, imageData);
-                ctx.putImageData(imageData, 0, (image.height + 20) * 2);
-                invertColours(imageData);
-                ctx.putImageData(imageData, 0, (image.height + 20) * 3);
-            })
-            .catch(function (err) {
-                console.log(err);
-            });
-
-        function removeColour(colour, imageData) {
-            let dataArray = imageData.data;
-            for (let i = 0; i < dataArray.length; i += 4) {
-                dataArray[i + colour] = 0;
-            }
-        }
-
-        function invertColours(imageData) {
-            let dataArray = imageData.data;
-            for (let i = 0; i < dataArray.length; i += 4) {
-                dataArray[i] = 255 - dataArray[i];
-                dataArray[i + 1] = 255 - dataArray[i + 1];
-                dataArray[i + 2] = 255 - dataArray[i + 2];
-            }
-        }
-    </script>
+    <script src="script.js"></script>
 
 </body>
 
