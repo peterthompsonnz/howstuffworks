@@ -27,6 +27,7 @@ const image = document.querySelector('#trainImage');
 
 // Create an Image object, set it's source to be the existing hidden image. and draw it at the top of the canvas
 const train = new Image();
+train.src = image.src;
 train.onload = function () {
     ctx.drawImage(image, 0, 0, IMAGE_WIDTH, IMAGE_HEIGHT);
 }
