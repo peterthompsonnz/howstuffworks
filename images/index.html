@@ -31,10 +31,10 @@
                 This is also referred to as a "Bitmap". The word pixel is a contraction of the two words "Picture
                 element". The pixels are arranged in a grid containing rows and columns. Each pixel is coloured and has
                 a measure of opaqueness (see-throughness) or Alpha. The resultant colour is made up of a mix of
-                different strength red (R), green (G) and blue (B) colours and the aforementioned opaqueness (A). The system is known as
+                different strengths of red (R), green (G) and blue (B) colours and the aforementioned opaqueness (A). The system is known as
                 the RGBA colour system, and it is the one that monitors, laptops, tablets, TVs, and phone screens use. The strength of the RGBA
-                values range from 0 to 255. A value of 0 means no 'strength' of that colour and a value of 255 means 'full
-                strength' of the colour. An Alpha value of 0 means the colour is see-through - despite what it's RGB
+                values range from 0 to 255. A value of 0 means no "strength" of that particular colour and a value of 255 means "full
+                strength" of the colour. An Alpha value of 0 means the colour is see-through - despite what it's RGB
                 values are - and a value of 255 means the colour is completely opaque i.e. not see through at all.</p>
             <p>Not counting the Alpha value, the number of different colour shades is the possible red values x the
                 possible green values x the possible blue values, or 255 x 255 x 255 = 16,581,375. The numbers from 0 to
@@ -56,10 +56,10 @@
             </p>
             <figure>
                 <img src="/images/assets/moon-train.jpg" alt="TGV train with moon in the sky">
-                <figcaption>(600x337) image at normal zoom</figcaption>
+                <figcaption loading="lazy">(600x337) image at normal zoom</figcaption>
             </figure>
             <figure>
-                <img src="/images/assets/pixelated-moon-train-light.png" alt="Pixelated TGV train light">
+                <img src="/images/assets/pixelated-moon-train-light.png" alt="Pixelated TGV train light" loading="lazy">
                 <figcaption>Part of image zoomed
                     <br>showing pixels
                 </figcaption>
@@ -68,12 +68,12 @@
             <h2>Pixel manipulation</h2>
             <p>The RGBA values of pixels can be manipulated programmatically. For example filters can be applied in image editors such as Photoshop of <a href="https://photopea.com">Photopea</a>. Web browsers have a built in JavaScript (JS) code interpreter, and JS code can: grab the pixels of an image on a web page, manipulate them and write them back to the page. The image below shows how the red values for each pixel in the train image has been set to zero i.e. there is no red in the image.</p>
             <figure>
-                <img src="/images/assets/train-images.jpg" alt="Screeshot of a train image and it's manipulated version">
+                <img src="/images/assets/train-images.jpg" alt="screeshot of a train image and it's manipulated version" loading="lazy">
                 <figcaption>An image of a train and a version with all red pixel values set to 0
                 </figcaption>
             </figure>    
                 
-            <p>The following link points to the pixel manipulation web app. There is a link on it to the JS code file. Note you will need to use the browser's back button to get back to this page: <a href="/images/pixel-manipulation/">Pixel manipulation app</a></p>
+            <p>The following link points to the pixel manipulation web app. There is a link on the page to the Javascript file that contains the manipulation code: <a href="/images/pixel-manipulation/">Pixel manipulation app</a></p>
             
 
             <h2>Resolution or screen definition</h2>
@@ -96,7 +96,7 @@
                 (pixels per inch).
                 This means that the 600 by 337 image ideally will take up a space of 600/460 by 337/460 or 1.3 by 0.73
                 inches,
-                or 3.3cm by 1.9cm. I write 'ideally' because there are several other factors that determine the size an
+                or 3.3cm by 1.9cm. I write "ideally" because there are several other factors that determine the size an
                 image
                 will be displayed at - such as what styles the creator of the web page has set for image display.
             </p>
@@ -107,7 +107,7 @@
             </p>
             <h2>Image formats</h2>
             <p>This section is quite technical, but will be useful when learning about saving images in different image
-                formats when using Photopea. Don't worry if you do not understand it all.</p>
+                formats when using Photopea. Don"t worry if you do not understand it all.</p>
             <p>As mentioned above, an image displayed on a screen is a rectangular grid of coloured pixels. Each pixel's
                 colour
                 is made up of a combination of various strengths of red, green and blue. This is called the RGB
@@ -167,43 +167,54 @@
                     PNG, proprietary
                     format (copyright owned).
                 </li>
+                <li>
+                    <strong>SVG (scalable vector graphics)</strong>: File extension
+                    <em>svg</em> - are text based i.e. they can be opened and edited in a simple text editor. The text describes how vectors combine to make up the deawn image. Because they are vector based they can be scaled with no loss of quality - unlike bitmaps that have jagged edges when zoomed - svg edges stay smooth. Try this out by zooming this page and examining the edges of the rose and the blob images below. SVG's are commonly used for small graphics without too many colours or detail. Note the file size of the 'complex' rose svg compared with that of the blobs. Also, open save each image and open it in a text editor and examine the code. For more information on SVG's visit this page: <a href="https://developer.mozilla.org/en-US/docs/Web/SVG">SVG - Scalable vector graphics</a>
+                </li>
             </ul>
             <h2>Examples of the different formats</h2>
             <p>Note that the three images of the sun going down appear to be the same quality, however note the
                 different file sizes. It is obvious that the jpeg is the most efficient in terms of file size for this
                 type of image i.e. one that has many colour shades.</p>
             <figure>
-                <img src="/images/assets/new-zealand.bmp" alt="Country scene">
+                <img src="/images/assets/contry-sunset-through-trees.bmp" alt="Country scene" loading="lazy">
                 <figcaption>BMP, 660kB, lossless, uncompressed</figcaption>
             </figure>
             <figure>
-                <img src="/images/assets/new-zealand.png" alt="Country scene">
+                <img src="/images/assets/contry-sunset-through-trees.png" alt="Country scene" loading="lazy">
                 <figcaption>PNG, 403kB, 24bit, compressed, lossless</figcaption>
             </figure>
             <figure>
-                <img src="/images/assets/new-zealand.jpg" alt="Country scene">
+                <img src="/images/assets/contry-sunset-through-trees.jpg" alt="Country scene" loading="lazy">
                 <figcaption>
                     <strong>JPEG, 53kB</strong>, 24bit, compressed, lossey
                 </figcaption>
             </figure>
             <figure>
-                <img src="/images/assets/raccoon.png" alt="Cartoon raccoon">
+                <img src="/images/assets/raccoon.png" alt="Cartoon raccoon" loading="lazy">
                 <figcaption>PNG, 6.8kB compressed, lossless, transparent background
                     <br>(note grey colour showing through)
                 </figcaption>
             </figure>
             <figure>
-                <img src="/images/assets/raccoon.gif" alt="Cartoon raccoon">
+                <img src="/images/assets/raccoon.gif" alt="Cartoon raccoon" loading="lazy">
                 <figcaption>GIF, 6.9kB, compressed, lossless, transparent background
                     <br>(note grey colour showing through)
                 </figcaption>
             </figure>
             <figure>
-                <img src="/images/assets/Seven_segment_display-animated.gif" alt="Dgital clock">
+                <img src="/images/assets/Seven_segment_display-animated.gif" alt="Dgital clock" loading="lazy">
                 <figcaption>Animated GIF, 10.8kB, compressed, lossless</figcaption>
             </figure>
-
-            
+            <figure>
+                <img src="/images/assets/rose.svg" alt="Red rose" loading="lazy">
+                <figcaption>An image of a rose stored as an SVG vector graphic. Filesize: 23.4KiB</figcaption>
+            </figure>        
+            <figure>
+                <img src="/images/assets/blobs.svg" alt="Coloured blob shapes on a black backkground" loading="lazy">
+                <figcaption>An image of some coloured blobs stored as an SVG vector graphic. Note how it has a smaller file size than the rose, even though it is bigger, because it is not made up of complex shapes. Filesize: 5.7KiB</figcaption>
+            </figure>  
+            <!-- Animated gif maker: https://ezgif.com/maker           -->
 
         </main>
 
